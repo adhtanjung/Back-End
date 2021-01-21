@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { userRouter } = require("./router");
+const { userRouter, productRouter } = require("./router");
 const port = 2001;
 const app = express();
 app.use(cors());
@@ -12,4 +12,5 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter);
+app.use("/products", productRouter);
 app.listen(port, () => console.log(`API active at port ${port}`));
